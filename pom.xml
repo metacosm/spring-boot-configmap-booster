@@ -53,8 +53,9 @@
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.fabric8</groupId>
+      <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-kubernetes-core</artifactId>
+      <version>0.2.1.BUILD-SNAPSHOT</version>
     </dependency>
 
     <!-- Apache Tomcat Dependency required -->
@@ -67,6 +68,18 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.openshift</groupId>
+      <artifactId>openshift-test-utils</artifactId>
+      <version>${booster-common.version}</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.fabric8</groupId>
+          <artifactId>openshift-client-with-deps</artifactId>
+        </exclusion>
+      </exclusions>
       <scope>test</scope>
     </dependency>
   </dependencies>
